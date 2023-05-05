@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>InfoGraphX</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/pbar.css')}}" />
+</head>
+<style>
+.hidden {
+display: none;
+}
+#b1,#b2{
+    display: inline-block;
+}
+.common_btns button.b2 .icon{
+	display: flex;
+	margin-left: 10px;
+}
+.common_btns button.b1 .fas fa-download{
+	display: flex;
+	margin-right: 10px;
+}
+
+</style>
+<script>
+window.addEventListener('load', function() {
+var sections = document.getElementsByClassName('progress_item');
+var currentIndex = 0;
+
+function showNextSection() {
+    if (currentIndex < sections.length) {
+        sections[currentIndex].classList.remove('hidden');
+        currentIndex++;
+        setTimeout(showNextSection, 1000); // Time delay in milliseconds (2 seconds)
+    }
+}
+
+showNextSection();
+});
+</script>
+<body>
+<div class="progress_container">
+    <div class="progress">
+        <div class="progress_item hidden">
+            <h3 class="progress_title">Handling null values</h3>
+            <div class="progress_bar">
+                <div class="bar" data-value="100" data-text="100"></div>
+            </div>
+        </div>
+        <div class="progress_item hidden">
+            <h3 class="progress_title">Data Normalisation</h3>
+            <div class="progress_bar">
+                <div class="bar" data-value="100" data-text="100"></div>
+            </div>
+        </div>
+        <div class="progress_item hidden">
+            <h3 class="progress_title">Encoding Categorical Data</h3>
+            <div class="progress_bar">
+                <div class="bar" data-value="100" data-text="100"></div>
+            </div>
+        </div>
+        <div class="progress_item hidden">
+            <h3 class="progress_title">Removing Outliers</h3>
+            <div class="progress_bar">
+                <div class="bar" data-value="100" data-text="100"></div>
+            </div>
+        </div>
+        <div class="progress_item hidden">
+            <h3 class="progress_title">Correcting Inconsistent Data</h3>
+            <div class="progress_bar">
+                <div class="bar" data-value="100" data-text="100"></div>
+            </div>
+        </div>
+        <div class="progress_item hidden">
+            <h3 class="progress_title">Removing Duplicates</h3>
+            <div class="progress_bar">
+                <div class="bar" data-value="100" data-text="100"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+
+<!-- Add a download button to download the processed data as a CSV file -->
+<div class="common_btns form_2_btns" >
+<form action="/download" method="post">
+    <input type="hidden" name="processed_data" value="{{ processed_data }}">
+    <button type="submit" class="b1"><i class="fas fa-download"></i>Download</button>
+</form>
+<form action="/dash">
+    <button type="submit" class="b2"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Next</button>
+  </form></div>
+</body>
+</html>

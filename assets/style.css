@@ -1,0 +1,108 @@
+
+body {
+  background-color: white;
+  margin: 5%;
+}
+
+#title1 {
+  text-align: center;
+}
+
+#title2 {
+  text-align: center;
+}
+
+#title3 {
+  text-align: center;
+}
+
+.create_container2 {
+  align-items: center;
+  border-radius: 15px;
+  background-color: white;
+  margin: 10px;
+  padding: 15px;
+  position: relative;
+  box-shadow: 2px 2px 2px 2px #755a64;
+}
+
+.dcc_compon {
+  margin: 0 auto;
+  padding: 5px;
+  width: calc(100%-40px);
+}
+
+.fix_label {
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  width: calc(100%-40px);
+}
+
+.container-display {
+  display: flex;
+}
+
+#header {
+  align-items: center;
+}
+
+.flex-display {
+  display: flex;
+}
+
+#mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.rc-slider-track {
+  background-color: crimson;
+}
+
+.rc-slider-dot-active {
+  border-color: crimson;
+  border: solid 2px crimson;
+}
+
+.rc-slider-handle {
+  background-color: crimson;
+  border-color: crimson;
+}
+
+.rc.slider-handle:hover {
+  border-color: crimson;
+}
+
+.rc.slider-handle-active:active {
+  border-color: crimson;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px !important;
+  display: block !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3d252f !important;
+  border-radius: 10px !important;
+  display: block !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c295a9;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c295a9 !important;
+}
+
+
+
+
